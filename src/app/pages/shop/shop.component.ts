@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TelegramService } from '../../services/telegram.service';
+import { ProductService } from '../../services/products.service';
 
 @Component({
   selector: 'app-shop',
@@ -9,8 +10,10 @@ import { TelegramService } from '../../services/telegram.service';
 })
 export class ShopComponent {
   telegram = inject(TelegramService)
+  products = inject(ProductService)
   constructor() {
 
     this.telegram.MainButton.show()
+    console.log(this.products.byGroup)
   }
 }

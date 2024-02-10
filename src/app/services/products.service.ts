@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 
 
@@ -26,8 +27,7 @@ function addDomainToLinkAndImage(product: IProduct) {
     link: domain + product.link,
   }
 }
-
-export const products: IProduct[] = [
+const products: IProduct[] = [
   {
     id: '29',
     title: 'TypeScript',
@@ -100,5 +100,20 @@ export const products: IProduct[] = [
 })
 
 export class ProductService {
-  constructor() { }
+  readonly products: IProduct[] = products.map(addDomainToLinkAndImage)
+
+  getById(id: string) {
+    return this.products.find(product => product.id === id)
+  }
+
+  get byGroup() {
+    return this.products.reduce((group, prod) => {
+      if (!group[prod.type]) {
+        group[prod.type] = [];
+      }
+      group[prod.type].push(prod)
+      return group;
+    }, {})
+  }
+
 }
