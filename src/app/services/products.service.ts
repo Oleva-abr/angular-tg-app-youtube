@@ -51,25 +51,25 @@ const products: IProduct[] = [
     id: '31',
     title: 'Vue.js',
     link: '/products/vue',
-    image: '/img/icons/products/icon-vue.svg',
+    image: '/img/icons/products/icon-advanced-html-css.svg',
     text: 'components, directives, transitions',
     time: 'three weeks',
-    type: ProductType.Skill
+    type: ProductType.Course
   },
   {
     id: '32',
     title: 'Angular',
     link: '/products/angular',
-    image: '/img/icons/products/icon-angular.svg',
+    image: '/img/icons/products/icon-ts.svg',
     text: 'components, services, routing',
     time: 'four weeks',
-    type: ProductType.Skill
+    type: ProductType.Intensive
   },
   {
     id: '33',
     title: 'Node.js',
     link: '/products/node',
-    image: '/img/icons/products/icon-node.svg',
+    image: '/img/icons/products/icon-state-managers.svg',
     text: 'Express.js, RESTful APIs, MongoDB',
     time: 'four weeks',
     type: ProductType.Skill
@@ -81,7 +81,7 @@ const products: IProduct[] = [
     image: '/img/icons/products/icon-git.svg',
     text: 'semantic markup, flexbox, grid layout',
     time: 'two weeks',
-    type: ProductType.Skill
+    type: ProductType.Course
   },
   {
     id: '35',
@@ -90,7 +90,7 @@ const products: IProduct[] = [
     image: '/img/icons/products/icon-state-managers.svg',
     text: 'ES6 features, DOM manipulation, async programming',
     time: 'three weeks',
-    type: ProductType.Skill
+    type: ProductType.Intensive
   }
 ]
 

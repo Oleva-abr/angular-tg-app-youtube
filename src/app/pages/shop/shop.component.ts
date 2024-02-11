@@ -1,12 +1,29 @@
 import { Component, inject } from '@angular/core';
 import { TelegramService } from '../../services/telegram.service';
 import { ProductService } from '../../services/products.service';
+import { ProductListComponent } from '../../components/product-list/product-list.component';
 
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [],
-  template: `<h1>shop</h1>`,
+  imports: [ProductListComponent],
+  template: `
+  <app-product-list
+  title="Angular"
+  subtitle="components, services, routing"
+  [products]="products.byGroup['skill']"
+  />
+  <app-product-list
+  title="React"
+  subtitle="components, hooks, context"
+  [products]="products.byGroup['intensive']"
+  />
+  <app-product-list
+  title="Vue"
+  subtitle="components, directives, transitions"
+  [products]="products.byGroup['course']"
+  />
+  `,
 })
 export class ShopComponent {
   telegram = inject(TelegramService)
@@ -14,6 +31,6 @@ export class ShopComponent {
   constructor() {
 
     this.telegram.MainButton.show()
-    console.log(this.products.byGroup)
+
   }
 }
