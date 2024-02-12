@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TelegramService } from './services/telegram.service';
 
 
 
@@ -11,5 +12,10 @@ import { RouterOutlet } from '@angular/router';
   template: `<router-outlet/>`
 
 })
-export class AppComponent { }
+export class AppComponent {
+  telegram = inject(TelegramService);
+  constructor() {
+    this.telegram.ready()
+  }
+}
 

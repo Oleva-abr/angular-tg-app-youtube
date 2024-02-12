@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IProduct, ProductService } from '../../services/products.service';
 import { TelegramService } from '../../services/telegram.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -6,16 +6,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-product',
   standalone: true,
-  template: `<div class="centred">
+  template: `
+   <button (click)="goBack()">< Go Back</button>
+  <div class="centred">
     <h2 class="mb"> {{product.title}}</h2>
     <br/>
     <img [src]="product.image" [alt]="product.title">
     <p>{{product.text}}</p>
     <p>{{product.time}}</p>
     <a [href]="product.link" target="_blank">Learn about the course</a>
+   
   </div>`,
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit, OnDestroy {
   product: IProduct;
 
   constructor(
@@ -26,5 +29,19 @@ export class ProductComponent {
   ) {
     const id = this.route.snapshot.paramMap.get("id")
     this.product = this.products.getById(id)
+    this.goBack = this.goBack.bind(this)
   }
+
+  goBack() {
+    this.router.navigate(['/'])
+  }
+  ngOnInit(): void {
+    this.telegram.BackButton.show();
+    this.telegram.BackButton.onClick(this.goBack);
+  }
+  ngOnDestroy(): void {
+    this.telegram.BackButton.offClick(this.goBack)
+  }
+
+
 }
