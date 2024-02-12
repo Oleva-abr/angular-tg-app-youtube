@@ -50,7 +50,7 @@ const products: IProduct[] = [
   {
     id: '31',
     title: 'Vue.js',
-    link: '/products/vue',
+    link: '/products/base-programming',
     image: '/img/icons/products/icon-advanced-html-css.svg',
     text: 'components, directives, transitions',
     time: 'three weeks',
@@ -59,7 +59,7 @@ const products: IProduct[] = [
   {
     id: '32',
     title: 'Angular',
-    link: '/products/angular',
+    link: '/products/javascript',
     image: '/img/icons/products/icon-ts.svg',
     text: 'components, services, routing',
     time: 'four weeks',
@@ -68,7 +68,7 @@ const products: IProduct[] = [
   {
     id: '33',
     title: 'Node.js',
-    link: '/products/node',
+    link: '/products/javascript',
     image: '/img/icons/products/icon-state-managers.svg',
     text: 'Express.js, RESTful APIs, MongoDB',
     time: 'four weeks',
@@ -77,7 +77,7 @@ const products: IProduct[] = [
   {
     id: '34',
     title: 'HTML & CSS',
-    link: '/products/html-css',
+    link: '/products/base-programming',
     image: '/img/icons/products/icon-git.svg',
     text: 'semantic markup, flexbox, grid layout',
     time: 'two weeks',
